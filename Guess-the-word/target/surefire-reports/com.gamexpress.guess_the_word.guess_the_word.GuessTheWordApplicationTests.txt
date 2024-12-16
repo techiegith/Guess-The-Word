@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.gamexpress.guess_the_word.guess_the_word.GuessTheWordApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.016 s -- in com.gamexpress.guess_the_word.guess_the_word.GuessTheWordApplicationTests

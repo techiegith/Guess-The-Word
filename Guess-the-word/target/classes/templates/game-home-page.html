@@ -1,0 +1,105 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>GuessTheWord</title>-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="/css/style.css">&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="/js/script.js"></script>&ndash;&gt;-->
+<!--    <style>-->
+
+<!--    </style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Guess the Word</h1>-->
+
+<!--&lt;!&ndash; Display the current word &ndash;&gt;-->
+<!--<h2  th:text="${wordToDisplay}">Show a random word here</h2>-->
+<!--<h2 class="remaining-tries" th:text="'Tries Remaining : ' + ${triesLeft}">Show number of tries left here</h2>-->
+<!--<hr/>-->
+<!--&lt;!&ndash;Reload button&ndash;&gt;-->
+<!--<div class = "reload-container"></div>-->
+<!--<input type="button" value="Reload" id="reload" style="float:right;" onclick="reloadGame();">-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Form for guessing &ndash;&gt;-->
+<!--<div class="form-container">-->
+<!--    <form action="game-home" method="GET">-->
+<!--        <label>Guess a Character:</label>-->
+<!--        <input type="text" name="guessedChar" id="guessedChar" maxlength="1" placeholder="Enter a letter">-->
+<!--        <input type="submit" value="Try" id="try">-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Display the list of random words as options &ndash;&gt;-->
+
+<!--<div class="container">-->
+<!--    <div class="word-card" th:each="word : ${randomWords}" th:text="${word}">Word</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Display error message &ndash;&gt;-->
+<!--<div class="message" th:if="${errorMessage != null}">-->
+<!--    <p th:text="${errorMessage}"></p>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash; Display winning message &ndash;&gt;-->
+<!--<div class="win-message" th:if="${gameStatus == 'You Won!'}">-->
+<!--    <h2 th:text="${gameStatus}">You Won!</h2>-->
+<!--    <img src="https://cdn-icons-png.flaticon.com/512/2954/2954893.png" style="display:block; margin:auto; width:150px; height:150px;">-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GuessTheWord</title>
+    <!-- Referencing CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Referencing JS -->
+    <script src="/js/script.js"></script>
+</head>
+<body>
+<h1>Guess the Word</h1>
+
+<!-- Display the current word -->
+<h2  th:text="${wordToDisplay}">Show a random word here</h2>
+<h2 class="remaining-tries" th:text="'Tries Remaining : ' + ${triesLeft}">Show number of tries left here</h2>
+<hr/>
+<!--Reload button-->
+<div class = "reload-container">
+<input type="button" value="Reload" id="reload" style="float:right;" onclick="reloadGame();">
+</div>
+
+<!-- Form for guessing -->
+<div class="form-container">
+    <form action="game-home" method="GET">
+        <label>Guess a Character:</label>
+        <input type="text" name="guessedChar" id="guessedChar" maxlength="1" placeholder="Enter a letter">
+        <input type="submit" value="Try" id="try">
+    </form>
+</div>
+
+<!-- Display the list of random words as options -->
+
+<div class="container">
+    <div class="word-card" th:each="word : ${randomWords}" th:text="${word}">Word</div>
+</div>
+
+<span id="triesLeftElement" style="display:none;" th:text="${triesLeft}"></span>
+
+<!-- Display error message -->
+<div class="message" th:if="${errorMessage != null}">
+    <p th:text="${errorMessage}"></p>
+</div>
+
+
+<!-- Display winning message -->
+<div class="win-message" th:if="${gameStatus == 'You Won!'}">
+    <h2 th:text="${gameStatus}">You Won!</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/2954/2954893.png" style="display:block; margin:auto; width:150px; height:150px;">
+</div>
+</body>
+</html>
